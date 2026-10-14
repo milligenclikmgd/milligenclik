@@ -1,0 +1,799 @@
+{
+  "president": {
+    "name": "",
+    "title": "Genel Başkan",
+    "bio": "",
+    "photo": ""
+  },
+  "board": [
+    {
+      "id": 0,
+      "name": "",
+      "title": "Teşkilatlanma",
+      "photo": "",
+      "bio": "",
+      "assistants": []
+    },
+    {
+      "id": 1,
+      "name": "",
+      "title": "Eğitim",
+      "photo": "",
+      "bio": "",
+      "assistants": []
+    },
+    {
+      "id": 2,
+      "name": "",
+      "title": "Kültür ve Sanat",
+      "photo": "",
+      "bio": "",
+      "assistants": []
+    },
+    {
+      "id": 3,
+      "name": "",
+      "title": "Tanıtım ve Medya",
+      "photo": "",
+      "bio": "",
+      "assistants": []
+    },
+    {
+      "id": 4,
+      "name": "",
+      "title": "Hukuk",
+      "photo": "",
+      "bio": "",
+      "assistants": []
+    },
+    {
+      "id": 5,
+      "name": "",
+      "title": "İdari ve Mali İşler",
+      "photo": "",
+      "bio": "",
+      "assistants": []
+    }
+  ],
+  "branches": [
+    {
+      "id": "adana",
+      "code": "01",
+      "city": "Adana",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "adiyaman",
+      "code": "02",
+      "city": "Adıyaman",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "afyonkarahisar",
+      "code": "03",
+      "city": "Afyonkarahisar",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "agri",
+      "code": "04",
+      "city": "Ağrı",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "amasya",
+      "code": "05",
+      "city": "Amasya",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "ankara",
+      "code": "06",
+      "city": "Ankara",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "antalya",
+      "code": "07",
+      "city": "Antalya",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "artvin",
+      "code": "08",
+      "city": "Artvin",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "aydin",
+      "code": "09",
+      "city": "Aydın",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "balikesir",
+      "code": "10",
+      "city": "Balıkesir",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "bilecik",
+      "code": "11",
+      "city": "Bilecik",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "bingol",
+      "code": "12",
+      "city": "Bingöl",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "bitlis",
+      "code": "13",
+      "city": "Bitlis",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "bolu",
+      "code": "14",
+      "city": "Bolu",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "burdur",
+      "code": "15",
+      "city": "Burdur",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "bursa",
+      "code": "16",
+      "city": "Bursa",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "canakkale",
+      "code": "17",
+      "city": "Çanakkale",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "cankiri",
+      "code": "18",
+      "city": "Çankırı",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "corum",
+      "code": "19",
+      "city": "Çorum",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "denizli",
+      "code": "20",
+      "city": "Denizli",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "diyarbakir",
+      "code": "21",
+      "city": "Diyarbakır",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "edirne",
+      "code": "22",
+      "city": "Edirne",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "elazig",
+      "code": "23",
+      "city": "Elazığ",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "erzincan",
+      "code": "24",
+      "city": "Erzincan",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "erzurum",
+      "code": "25",
+      "city": "Erzurum",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "eskisehir",
+      "code": "26",
+      "city": "Eskişehir",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "gaziantep",
+      "code": "27",
+      "city": "Gaziantep",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "giresun",
+      "code": "28",
+      "city": "Giresun",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "gumushane",
+      "code": "29",
+      "city": "Gümüşhane",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "hakkari",
+      "code": "30",
+      "city": "Hakkâri",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "hatay",
+      "code": "31",
+      "city": "Hatay",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "isparta",
+      "code": "32",
+      "city": "Isparta",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "mersin",
+      "code": "33",
+      "city": "Mersin",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "istanbul-avrupa",
+      "code": "34",
+      "city": "İstanbul",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "izmir",
+      "code": "35",
+      "city": "İzmir",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kars",
+      "code": "36",
+      "city": "Kars",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kastamonu",
+      "code": "37",
+      "city": "Kastamonu",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kayseri",
+      "code": "38",
+      "city": "Kayseri",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kirklareli",
+      "code": "39",
+      "city": "Kırklareli",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kirsehir",
+      "code": "40",
+      "city": "Kırşehir",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kocaeli",
+      "code": "41",
+      "city": "Kocaeli",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "konya",
+      "code": "42",
+      "city": "Konya",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kutahya",
+      "code": "43",
+      "city": "Kütahya",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "malatya",
+      "code": "44",
+      "city": "Malatya",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "manisa",
+      "code": "45",
+      "city": "Manisa",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kahramanmaras",
+      "code": "46",
+      "city": "Kahramanmaraş",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "mardin",
+      "code": "47",
+      "city": "Mardin",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "mugla",
+      "code": "48",
+      "city": "Muğla",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "mus",
+      "code": "49",
+      "city": "Muş",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "nevsehir",
+      "code": "50",
+      "city": "Nevşehir",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "nigde",
+      "code": "51",
+      "city": "Niğde",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "ordu",
+      "code": "52",
+      "city": "Ordu",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "rize",
+      "code": "53",
+      "city": "Rize",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "sakarya",
+      "code": "54",
+      "city": "Sakarya",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "samsun",
+      "code": "55",
+      "city": "Samsun",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "siirt",
+      "code": "56",
+      "city": "Siirt",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "sinop",
+      "code": "57",
+      "city": "Sinop",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "sivas",
+      "code": "58",
+      "city": "Sivas",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "tekirdag",
+      "code": "59",
+      "city": "Tekirdağ",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "tokat",
+      "code": "60",
+      "city": "Tokat",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "trabzon",
+      "code": "61",
+      "city": "Trabzon",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "tunceli",
+      "code": "62",
+      "city": "Tunceli",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "sanliurfa",
+      "code": "63",
+      "city": "Şanlıurfa",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "usak",
+      "code": "64",
+      "city": "Uşak",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "van",
+      "code": "65",
+      "city": "Van",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "yozgat",
+      "code": "66",
+      "city": "Yozgat",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "zonguldak",
+      "code": "67",
+      "city": "Zonguldak",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "aksaray",
+      "code": "68",
+      "city": "Aksaray",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "bayburt",
+      "code": "69",
+      "city": "Bayburt",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "karaman",
+      "code": "70",
+      "city": "Karaman",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kirikkale",
+      "code": "71",
+      "city": "Kırıkkale",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "batman",
+      "code": "72",
+      "city": "Batman",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "sirnak",
+      "code": "73",
+      "city": "Şırnak",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "bartin",
+      "code": "74",
+      "city": "Bartın",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "ardahan",
+      "code": "75",
+      "city": "Ardahan",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "igdir",
+      "code": "76",
+      "city": "Iğdır",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "yalova",
+      "code": "77",
+      "city": "Yalova",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "karabuk",
+      "code": "78",
+      "city": "Karabük",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "kilis",
+      "code": "79",
+      "city": "Kilis",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "osmaniye",
+      "code": "80",
+      "city": "Osmaniye",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "id": "duzce",
+      "code": "81",
+      "city": "Düzce",
+      "name": "",
+      "address": "",
+      "phone": "",
+      "photo": ""
+    }
+  ],
+  "donation": {
+    "iban": "",
+    "recipient": "",
+    "paymentUrl": ""
+  },
+  "contact": {
+    "address": "",
+    "phone": "",
+    "email": ""
+  }
+}
