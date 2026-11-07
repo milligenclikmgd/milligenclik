@@ -22,6 +22,7 @@
 @media(prefers-reduced-motion:reduce){.intro-splash{transition:none}.intro-glow{animation:none!important;transform:none!important;opacity:.8}.intro-mark,.intro-slogan .slogan-line{opacity:1!important;transform:none!important;animation:none!important;filter:none!important}}
 
 /* Main page header, hero slider and quick access */
+.site-header .wrap,.hero-inner{width:min(1500px,90%)}
 .site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);border-bottom:1px solid #e4e8ef;backdrop-filter:blur(14px)}
 .site-header .nav{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .site-header .brand{gap:14px;padding-right:28px;border-right:1px solid #d7deea}
