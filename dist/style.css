@@ -4,16 +4,23 @@
 .branch-photo{width:75px;height:85px;object-fit:cover;border-radius:5px;margin-bottom:12px}
 
 /* Branded opening screen */
-.intro-splash{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:var(--blue);opacity:1;visibility:visible;transition:opacity .58s ease,visibility 0s linear .58s}
-.intro-splash.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
-.intro-lockup{width:min(470px,82vw);display:flex;flex-direction:column;align-items:center;gap:12px}
-.intro-mark{display:block;width:clamp(68px,8vw,96px);height:auto;opacity:0;transform:translateY(9px) scale(.96);filter:drop-shadow(0 0 30px #ffffff12);animation:intro-mark-in .78s cubic-bezier(.2,.7,.2,1) .08s forwards}
-.intro-slogan{position:relative;width:100%;aspect-ratio:1.491;overflow:hidden}
-.intro-slogan .slogan-line{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:translateY(10px);animation:intro-slogan-in .62s cubic-bezier(.2,.7,.2,1) forwards}
-.intro-slogan .slogan-line-1{clip-path:inset(0 0 75% 0);animation-delay:.55s}
-.intro-slogan .slogan-line-2{clip-path:inset(19% 0 44% 0);animation-delay:.74s}
-.intro-slogan .slogan-line-3{clip-path:inset(47% 0 29% 0);animation-delay:.93s}
-.intro-slogan .slogan-line-4{clip-path:inset(62% 0 0 0);animation-delay:1.12s}
-@keyframes intro-mark-in{to{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes intro-slogan-in{to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){.intro-splash{transition:none}.intro-mark,.intro-slogan .slogan-line{opacity:1!important;transform:none!important;animation:none!important;filter:none!important}}
+.intro-splash{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:var(--blue);transform:translate3d(0,0,0);will-change:transform;transition:transform .92s cubic-bezier(.76,0,.24,1)}
+.intro-splash.is-leaving{transform:translate3d(-100%,0,0);pointer-events:none}
+.intro-lines{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.9}
+.intro-lines:before,.intro-lines:after{content:"";position:absolute;inset:-55% -38%;will-change:transform}
+.intro-lines:before{background:repeating-linear-gradient(132deg,transparent 0 82px,#ffffff0c 83px,#ffffff0c 84px,transparent 85px 164px);mask-image:linear-gradient(90deg,transparent 18%,#000 100%);transform:translate3d(-12px,0,0) rotate(-7deg);animation:intro-lines-drift 16s linear infinite alternate}
+.intro-lines:after{background:repeating-linear-gradient(132deg,transparent 0 142px,#ffffff0a 143px,#ffffff0a 144px,transparent 145px 284px);mask-image:radial-gradient(ellipse at 84% 50%,#000 0%,transparent 68%);transform:translate3d(12px,0,0) rotate(-7deg);animation:intro-lines-drift-reverse 22s linear infinite alternate}
+.intro-lockup{position:relative;z-index:1;width:min(520px,82vw);display:flex;flex-direction:column;align-items:center;gap:17px;transform:translate3d(0,-1vh,0)}
+.intro-mark{display:block;width:clamp(138px,17vw,205px);height:auto;opacity:0;transform:translate3d(0,9px,0) scale(.96);filter:drop-shadow(0 0 30px #ffffff12);animation:intro-mark-in .78s cubic-bezier(.2,.7,.2,1) .08s forwards}
+.intro-slogan{position:relative;width:min(470px,76vw);aspect-ratio:1.491;overflow:hidden}
+.intro-slogan .slogan-line{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:translate3d(0,10px,0);animation:intro-slogan-in .62s cubic-bezier(.2,.7,.2,1) forwards}
+.intro-slogan .slogan-line-1{clip-path:inset(0 0 75% 0);animation-delay:.58s}
+.intro-slogan .slogan-line-2{clip-path:inset(19% 0 44% 0);animation-delay:.78s}
+.intro-slogan .slogan-line-3{clip-path:inset(47% 0 29% 0);animation-delay:.98s}
+.intro-slogan .slogan-line-4{clip-path:inset(62% 0 0 0);animation-delay:1.18s}
+@keyframes intro-mark-in{to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes intro-slogan-in{to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes intro-lines-drift{to{transform:translate3d(18px,-12px,0) rotate(-7deg)}}
+@keyframes intro-lines-drift-reverse{to{transform:translate3d(-16px,10px,0) rotate(-7deg)}}
+@media(max-height:660px){.intro-lockup{transform:scale(.82)}}
+@media(prefers-reduced-motion:reduce){.intro-splash{transition:none}.intro-lines:before,.intro-lines:after{animation:none!important;transform:none!important}.intro-mark,.intro-slogan .slogan-line{opacity:1!important;transform:none!important;animation:none!important;filter:none!important}}
