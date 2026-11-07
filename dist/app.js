@@ -1,5 +1,7 @@
 'use strict';
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const $=s=>document.querySelector(s), $=s=>[...document.querySelectorAll(s)];
+function initIntroSplash(){const splash=$('#intro-splash');if(!splash)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){splash.remove();return}const started=performance.now();let finished=false;const close=()=>{if(finished)return;finished=true;const wait=Math.max(0,1900-(performance.now()-started));window.setTimeout(()=>{splash.classList.add('is-leaving');window.setTimeout(()=>splash.remove(),650)},wait)};window.addEventListener('load',close,{once:true});window.setTimeout(close,2800)}
+initIntroSplash();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const imageURL=s=>typeof s==='string'&&(/^(assets\/|data:image\/(png|jpeg|webp);base64,)/.test(s)||/^https:\/\//.test(s))?s:'';
 const safeURL=s=>{try{const u=new URL(s);return u.protocol==='https:'?u.href:''}catch{return ''}};
