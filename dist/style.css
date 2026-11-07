@@ -129,3 +129,54 @@ body.site-ready .hero-banner .slide-controls{animation:hero-copy-in .7s cubic-be
 .hero-banner #dots button.active{width:31px}}
 
 @media(max-width:680px){.hero-banner .hero-cta{min-width:min(280px,100%)}}
+
+
+/* Compact header labels and scroll expanding pioneer profiles */
+.site-header nav{justify-content:flex-end;gap:clamp(9px,1.15vw,18px)}
+.site-header nav a,.site-header nav button{font-weight:750;letter-spacing:-.25px}
+.site-header .nav-link{display:inline-flex;align-items:center;gap:4px}
+.site-header .nav-chevron{display:inline-flex;align-items:center;justify-content:center;line-height:1;transform:translateY(-1px);font-weight:600}
+@media(max-width:1200px){.site-header nav{gap:clamp(8px,1vw,13px)}.site-header nav a,.site-header nav button{font-weight:700}}
+@media(max-width:980px){.site-header nav{gap:8px}.site-header .nav-link{justify-content:space-between}.site-header .nav-chevron{margin-left:8px}}
+.pioneers-section{background:#f4f7fc;overflow:hidden}
+.pioneers-section .section-head{margin-bottom:34px}
+.pioneer-list{display:grid;gap:11px}
+.pioneer-card{position:relative;height:124px;overflow:hidden;border-radius:17px;background:linear-gradient(110deg,#0b2c62 0%,#124d9b 48%,#527fca 100%);color:#fff;box-shadow:0 12px 34px #12376517;transition:height .82s cubic-bezier(.2,.75,.2,1),box-shadow .45s,transform .45s}
+.pioneer-card.is-open{height:360px;box-shadow:0 22px 54px #12376527}
+.pioneer-card:nth-child(2){background:linear-gradient(110deg,#0b2a5d 0%,#164986 48%,#6c87c6 100%)}
+.pioneer-card:nth-child(3){background:linear-gradient(110deg,#0d315f 0%,#12528e 48%,#6a8dc3 100%)}
+.pioneer-art{position:absolute;inset:0 0 0 auto;width:37%;overflow:hidden;background:radial-gradient(ellipse at 65% 44%,#89b5ff99 0%,#4d83d659 34%,transparent 69%),linear-gradient(135deg,#0c2c60,#5684cc)}
+.pioneer-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b2c62 0%,#0b2c6250 35%,#0a245b12 100%)}
+.pioneer-card:nth-child(2) .pioneer-art{background:radial-gradient(ellipse at 65% 44%,#b8d0ff88 0%,#4d83d659 34%,transparent 69%),linear-gradient(135deg,#0c2c60,#748bc4)}
+.pioneer-card:nth-child(3) .pioneer-art{background:radial-gradient(ellipse at 65% 44%,#a4caff88 0%,#4d83d659 34%,transparent 69%),linear-gradient(135deg,#0c2c60,#4887b7)}
+.pioneer-art img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 28%;opacity:.87;mix-blend-mode:luminosity}
+.pioneer-art.has-image:after{background:linear-gradient(90deg,#0b2c62 0%,#0b2c6250 22%,#0a245b25 100%)}
+.pioneer-art-mark{position:absolute;right:13%;bottom:-48%;font-size:clamp(130px,25vw,320px);line-height:1;font-weight:900;letter-spacing:-.1em;color:#ffffff16;user-select:none}
+.pioneer-trigger{position:absolute;inset:0 0 auto;height:124px;width:100%;display:flex;align-items:center;gap:18px;padding:0 38px;border:0;background:transparent;text-align:left;color:#fff;z-index:2;cursor:pointer}
+.pioneer-card.is-open .pioneer-trigger{height:112px;align-items:flex-start;padding-top:37px}
+.pioneer-name{font-size:clamp(22px,2.8vw,34px);font-weight:650;letter-spacing:-.8px;line-height:1.15;max-width:58%;text-wrap:balance}
+.pioneer-years{font-size:14px;color:#ffffffb5}
+.pioneer-number{position:absolute;right:41%;top:34px;font-size:18px;font-weight:600;color:#ffffffab}
+.pioneer-detail{position:absolute;left:38px;top:148px;max-width:min(600px,54%);opacity:0;transform:translateY(10px);transition:opacity .45s .12s,transform .55s .1s;pointer-events:none}
+.pioneer-card.is-open .pioneer-detail{opacity:1;transform:translateY(0);pointer-events:auto}
+.pioneer-detail p{margin:0 0 23px;color:#f4f7ff;max-width:590px;font-size:16px;line-height:1.65}
+.pioneer-more{display:inline-flex;align-items:center;gap:20px;padding:12px 17px;border:1px solid #ffffff55;border-radius:999px;background:#ffffff13;color:#fff;font-size:13px;font-weight:700;transition:background .25s,transform .25s}
+.pioneer-more:hover{background:#ffffff28;transform:translateY(-2px)}
+.pioneer-more span{font-size:18px}
+.pioneer-size-guide{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 12px}
+.pioneer-size-guide strong{width:100%;font-size:12px;color:#34496a}
+.pioneer-size-guide span{padding:6px 9px;border-radius:6px;background:#f1f5fb;color:#4e5f78;font-size:10px}
+.pioneer-preview-stack{display:grid;gap:8px;margin-bottom:12px}
+.pioneer-preview-card{position:relative;display:flex;align-items:center;overflow:hidden;width:100%;height:78px;padding:12px 15px;border-radius:10px;background:linear-gradient(105deg,#0b2c62,#2460ad 62%,#7795d3);color:white}
+.pioneer-preview-card.is-expanded{height:150px;align-items:flex-start;padding-top:19px}
+.pioneer-preview-card .preview-image{position:absolute;inset:0 0 0 auto;width:36%;background:radial-gradient(ellipse at 60% 45%,#a9caff8a,transparent 70%),linear-gradient(135deg,#113365,#7797d4);background-position:center;background-size:cover;opacity:.9}
+.pioneer-preview-card:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b2c62,transparent 100%);pointer-events:none}
+.pioneer-preview-card>b,.pioneer-preview-card>div,.pioneer-preview-card>small{position:relative;z-index:1}
+.pioneer-preview-card>b{font-size:13px;max-width:70%}
+.pioneer-preview-card>small{position:absolute;right:9px;bottom:6px;font-size:8px;color:#ffffffb8}
+.pioneer-preview-card>div{max-width:60%}
+.pioneer-preview-card>div>b{font-size:13px}
+.pioneer-preview-card>div>p{font-size:10px;line-height:1.4;margin:6px 0}
+.pioneer-preview-card>div>button{padding:5px 8px;border-radius:20px;background:#ffffff1b;color:#fff;font-size:9px}
+@media(max-width:680px){.pioneers-section{padding-block:54px}.pioneers-section .section-head{margin-bottom:24px}.pioneer-card{height:112px;border-radius:13px}.pioneer-card.is-open{height:430px}.pioneer-trigger{height:112px;padding:0 18px;gap:9px}.pioneer-card.is-open .pioneer-trigger{height:120px;padding-top:28px}.pioneer-name{font-size:clamp(20px,5.5vw,27px);max-width:60%}.pioneer-years{font-size:11px}.pioneer-number{right:39%;top:17px;font-size:13px}.pioneer-art{width:39%}.pioneer-art-mark{font-size:170px;right:4%;bottom:-29%}.pioneer-detail{left:18px;top:145px;max-width:60%}.pioneer-detail p{font-size:13px;line-height:1.55;margin-bottom:16px}.pioneer-more{padding:10px 13px;font-size:11px}.pioneer-preview-card.is-expanded{height:140px}}
+@media(prefers-reduced-motion:reduce){.pioneer-card,.pioneer-detail,.pioneer-more{transition:none!important}}
