@@ -215,3 +215,8 @@ body.site-ready .hero-banner .slide-controls{animation:hero-copy-in .7s cubic-be
 @media(max-width:900px){.news-calendar-grid{grid-template-columns:1fr}.calendar-panel{max-width:620px;width:100%;justify-self:center}}
 @media(max-width:600px){.news-calendar-section{padding-block:58px}.news-calendar-section .section-head{margin-bottom:24px}.news-calendar-grid{gap:16px}.news-feature{min-height:255px;padding:23px;border-radius:14px}.news-feature-top{top:20px;left:22px;right:22px;font-size:8px;letter-spacing:1.3px}.news-feature-copy h3{font-size:25px}.news-feature-copy p{font-size:12px}.news-teasers{grid-template-columns:1fr}.news-teaser{min-height:0;padding:15px}.calendar-panel{padding:19px;border-radius:14px}.calendar-panel-heading h3{font-size:20px}.calendar-day,.calendar-empty{height:33px}}
 @media(prefers-reduced-motion:reduce){.pioneer-card,.news-column,.calendar-panel{opacity:1!important;transform:none!important;transition:none!important}.pulse-dot{animation:none!important}}
+
+/* Content stays visible when enhancement is unavailable. */
+.pioneer-card,.news-column,.calendar-panel{opacity:1;transform:none}
+.pioneer-card.reveal-ready:not(.is-visible),.news-column.reveal-ready:not(.is-visible),.calendar-panel.reveal-ready:not(.is-visible){opacity:0;transform:translateY(15px)}
+@media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1!important;transform:none!important}}
