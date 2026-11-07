@@ -795,5 +795,31 @@
     "address": "",
     "phone": "",
     "email": ""
-  }
+  },
+  "pioneers": [
+    {
+      "id": "erbakan",
+      "name": "Prof. Dr. Necmettin Erbakan",
+      "years": "1926–2011",
+      "summary": "Mühendis, akademisyen ve devlet adamı. Ahlak ve maneviyat merkezli bir gençlik idealine öncülük etti.",
+      "detail": "Prof. Dr. Necmettin Erbakan; mühendislik, akademi ve siyaset alanlarında iz bırakan bir isimdir. Gençliğin ilim, ahlak ve sorumlulukla yetişmesi gerektiğini savundu. Bu kart örnek içeriktir; metinler ve görseller içerik taslağı düzenleyicisinden değiştirilebilir.",
+      "photo": ""
+    },
+    {
+      "id": "el-cezeri",
+      "name": "El Cezerî",
+      "years": "1136–1206",
+      "summary": "Mekanik düzenekleriyle tanınan, Artuklu döneminin öncü mühendis ve mucitlerinden biridir.",
+      "detail": "İsmail el-Cezerî, mekanik ve otomatik düzenekleriyle mühendislik tarihine katkı sunmuştur. Su saatleri, pompalar ve çeşitli makineler üzerine çalışmalarıyla tanınır. Bu kart örnek içeriktir; metinler ve görseller içerik taslağı düzenleyicisinden değiştirilebilir.",
+      "photo": ""
+    },
+    {
+      "id": "mehmet-akif",
+      "name": "Mehmet Âkif Ersoy",
+      "years": "1873–1936",
+      "summary": "Şair, düşünür ve eğitimci. İstiklâl Marşı’nın şairi olarak milletin hafızasında yer aldı.",
+      "detail": "Mehmet Âkif Ersoy; şiirleri, fikir yazıları ve eğitimci kimliğiyle tanınır. İstiklâl Marşı’nın şairidir. Bu kart örnek içeriktir; metinler ve görseller içerik taslağı düzenleyicisinden değiştirilebilir.",
+      "photo": ""
+    }
+  ]
 }
