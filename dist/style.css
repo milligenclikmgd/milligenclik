@@ -16,4 +16,4 @@
 .intro-slogan .slogan-line-4{clip-path:inset(62% 0 0 0);animation-delay:1.12s}
 @keyframes intro-mark-in{to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes intro-slogan-in{to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){.intro-splash{display:none!important}}
+@media(prefers-reduced-motion:reduce){.intro-splash{transition:none}.intro-mark,.intro-slogan .slogan-line{opacity:1!important;transform:none!important;animation:none!important;filter:none!important}}
