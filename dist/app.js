@@ -10,7 +10,25 @@ const dialog=$('#dialog');let lastFocus;
 function openDialog(content){lastFocus=document.activeElement;$('#dialog-content').innerHTML=content;if(!dialog.open)dialog.showModal();$('.dialog-close').focus()}
 $('.dialog-close').onclick=()=>dialog.close();dialog.addEventListener('close',()=>lastFocus?.focus());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 $('.menu-toggle').onclick=()=>{const open=$('nav').classList.toggle('open');$('.menu-toggle').setAttribute('aria-expanded',open)};
-$$('nav a, nav button').forEach(a=>a.addEventListener('click',()=>{$('nav').classList.remove('open');$('.menu-toggle').setAttribute('aria-expanded','false')}));
+document.querySelectorAll('.site-header nav a, .site-header nav button').forEach(a=>a.addEventListener('click',()=>{
+ if(a.classList.contains('dropdown-trigger'))return;
+ document.querySelector('.site-header nav').classList.remove('open');
+ document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');
+ closeHeaderDropdowns();
+}));
+function closeHeaderDropdowns(){document.querySelectorAll('.site-header .dropdown').forEach(d=>setHeaderDropdown(d,false))}
+function setHeaderDropdown(d,open){d.classList.toggle('is-open',open);d.querySelector('.dropdown-trigger').setAttribute('aria-expanded',String(open));d.querySelector('.submenu').inert=!open}
+document.querySelectorAll('.site-header .dropdown').forEach(d=>{
+ const trigger=d.querySelector('.dropdown-trigger');let leaveTimer;
+ d.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover) and (min-width:981px)').matches){clearTimeout(leaveTimer);setHeaderDropdown(d,true)}});
+ d.addEventListener('mouseleave',()=>{leaveTimer=setTimeout(()=>{if(!d.contains(document.activeElement))setHeaderDropdown(d,false)},130)});
+ trigger.addEventListener('click',()=>{clearTimeout(leaveTimer);setHeaderDropdown(d,!d.classList.contains('is-open'))});
+ trigger.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();setHeaderDropdown(d,true);d.querySelector('.submenu a').focus()}});
+ d.addEventListener('focusout',()=>{setTimeout(()=>{if(!d.contains(document.activeElement))setHeaderDropdown(d,false)},0)});
+ d.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();setHeaderDropdown(d,false);trigger.focus()}});
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.site-header .dropdown'))closeHeaderDropdowns()});
+
 const slides=[{title:'Şuurlu Gençlik<br><em>Güçlü Türkiye</em>',desc:'Ahlak, ilim ve sorumlulukla yarınları birlikte inşa ediyoruz.',caption:'ÖNCE AHLAK VE MANEVİYAT'},{title:'Birlikte Öğrenir,<br><em>Birlikte Üretiriz</em>',desc:'Öğreniyor, üretiyor; gençliğin emeğini geleceğe taşıyoruz.',caption:'İMAN · ŞUUR · EMEK'},{title:'Köklerden Güç,<br><em>Geleceğe Umut</em>',desc:'Köklerimizden güç alıp ilim ve kardeşlikle yürüyoruz.',caption:'AYNI İDEAL, AYNI HEYECAN'},{title:'Ahlaklı Gençlik,<br><em>Güçlü Türkiye</em>',desc:'Şuurlu ve sorumluluk sahibi gençlerle geleceğe yürüyoruz.',caption:'GELECEĞE BİRLİKTE'}];
 let slide=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches,timer;
 $('#dots').innerHTML=slides.map((_,i)=>`<button aria-label="${i+1}. slayt" data-slide="${i}"></button>`).join('');

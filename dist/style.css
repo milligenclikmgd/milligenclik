@@ -232,3 +232,33 @@ body{font-family:'Campton',Arial,sans-serif;font-weight:400}
 h1,h2,h3,.hero-banner h1{font-family:'Campton',Arial,sans-serif;font-weight:700}
 .site-header nav a,.site-header nav button{font-family:'Campton',Arial,sans-serif;font-weight:600}
 button,input,select,textarea{font-family:inherit}
+
+/* Corporate navy header and horizontal white identity */
+.site-header{background:#213b78;border-bottom:1px solid #ffffff1f;box-shadow:0 5px 25px #10255012}
+.site-header .brand{padding-right:24px;border-color:#ffffff26}
+.site-header .brand .brand-logo{position:relative;display:block;width:204px;height:auto;aspect-ratio:1233/461;overflow:hidden;flex:none}
+.site-header .brand .brand-logo img{position:absolute;width:116.788321%;height:auto;max-width:none;left:-9.083536%;top:-67.0282%;object-fit:initial}
+.site-header nav a,.site-header nav button,.site-header .nav-chevron,.site-header .menu-toggle{color:#fff}
+.site-header .nav-link{transition:color .25s ease,background .25s ease}
+.site-header .nav-link:hover,.site-header .nav-link:focus-visible{color:#bcd7ff}
+.site-header .search-toggle{background:#ffffff12;color:#fff;border:1px solid #ffffff25;transition:background .25s}
+.site-header .search-toggle:hover{background:#ffffff28}
+.site-header .member-cta{background:#fff;color:#213b78;border:1px solid #fff;transition:background .25s,color .25s}
+.site-header .member-cta:hover{background:#dce9ff;color:#172b55}
+.site-header .dropdown{position:relative}
+.site-header .dropdown .submenu{display:block;position:absolute;top:100%;left:-16px;width:240px;padding:9px;border:1px solid #ffffff25;border-radius:13px;background:#1a3064;box-shadow:0 18px 40px #081a4033;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(9px);transition:opacity .28s ease,transform .32s cubic-bezier(.2,.75,.25,1),visibility .32s}
+.site-header .dropdown.is-open .submenu{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.site-header .dropdown .submenu a{display:block;width:100%;padding:13px 15px;border-radius:7px;color:#fff;font-size:14px;text-align:left;transition:background .23s ease,color .23s ease,transform .23s ease}
+.site-header .dropdown .submenu a:hover,.site-header .dropdown .submenu a:focus-visible{background:#e4eeff;color:#172b55;transform:translateX(2px);outline:none}
+.site-header .dropdown-trigger .nav-chevron{transition:transform .3s ease}
+.site-header .dropdown.is-open .dropdown-trigger .nav-chevron{transform:rotate(180deg)}
+.site-header :is(a,button):focus-visible{outline:2px solid #bfd8ff;outline-offset:4px}
+@media(max-width:1200px){.site-header .brand .brand-logo{width:165px}.site-header .brand{padding-right:16px}.site-header .nav{gap:14px}}
+@media(max-width:980px){
+ .site-header nav{background:#213b78;border-top:1px solid #ffffff20}
+ .site-header .brand .brand-logo{width:174px}
+ .site-header .dropdown .submenu{position:static;width:100%;max-height:0;overflow:hidden;padding:0 8px;border:0;box-shadow:none;transform:translateY(-5px);transition:max-height .35s ease,padding .35s ease,opacity .28s ease,transform .3s ease,visibility .35s}
+ .site-header .dropdown.is-open .submenu{max-height:220px;padding:8px;transform:translateY(0)}
+}
+@media(max-width:680px){.site-header .brand .brand-logo{width:142px}.site-header .brand{padding-right:0;border:0}}
+@media(prefers-reduced-motion:reduce){.site-header .dropdown .submenu,.site-header .dropdown .submenu a,.site-header .nav-chevron{transition:none}}
