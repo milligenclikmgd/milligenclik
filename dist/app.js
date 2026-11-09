@@ -7,8 +7,8 @@ const imageURL=s=>typeof s==='string'&&(/^(assets\/|data:image\/(png|jpeg|webp);
 const safeURL=s=>{try{const u=new URL(s);return u.protocol==='https:'?u.href:''}catch{return ''}};
 let data, baseData, currentTab='president', currentCity='ankara';
 const dialog=$('#dialog');let lastFocus;
-function openDialog(content){lastFocus=document.activeElement;$('#dialog-content').innerHTML=content;if(!dialog.open)dialog.showModal();$('.dialog-close').focus()}
-$('.dialog-close').onclick=()=>dialog.close();dialog.addEventListener('close',()=>lastFocus?.focus());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
+function openDialog(content){dialog.classList.remove('admin-panel');lastFocus=document.activeElement;$('#dialog-content').innerHTML=content;if(!dialog.open)dialog.showModal();$('.dialog-close').focus()}
+$('.dialog-close').onclick=()=>dialog.close();dialog.addEventListener('close',()=>{dialog.classList.remove('admin-panel');lastFocus?.focus()});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 $('.menu-toggle').onclick=()=>{const open=$('nav').classList.toggle('open');$('.menu-toggle').setAttribute('aria-expanded',open)};
 document.querySelectorAll('.site-header nav a, .site-header nav button').forEach(a=>a.addEventListener('click',()=>{
  if(a.classList.contains('dropdown-trigger'))return;
@@ -67,14 +67,43 @@ function renderCalendar(){const month=$('#calendar-month'),days=$('#calendar-day
 $('#calendar-prev').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()-1,1);renderCalendar()};
 $('#calendar-next').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()+1,1);renderCalendar()};
 function initScrollReveals(){
- const targets=document.querySelectorAll('[data-reveal], [data-pioneer-card]');
- if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){targets.forEach(el=>el.classList.add('is-visible'));return}
- if(!window.siteRevealObserver)window.siteRevealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');window.siteRevealObserver.unobserve(entry.target)}}),{threshold:.08});
- targets.forEach(el=>{if(el.classList.contains('is-visible'))return;el.classList.add('reveal-ready');window.siteRevealObserver.observe(el)});
+ const targets=document.querySelectorAll('main > section:not(.hero-banner), .quick-links, [data-pioneer-card], [data-reveal]');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ if(!('IntersectionObserver' in window)||reduced.matches){targets.forEach(el=>{el.classList.remove('scroll-reveal');el.classList.add('is-visible')});return}
+ if(!window.siteRevealObserver){
+  window.siteRevealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+   // Keep content above the viewport visible; rewind only when returning below it.
+   const visible=entry.isIntersecting||entry.boundingClientRect.top<0;
+   entry.target.classList.toggle('is-visible',visible);
+  }),{threshold:0,rootMargin:'0px 0px -6% 0px'});
+  reduced.addEventListener('change',()=>{window.siteRevealObserver.disconnect();window.siteRevealObserver=null;document.querySelectorAll('.scroll-reveal').forEach(el=>el.classList.remove('scroll-reveal'));initScrollReveals()});
+ }
+ targets.forEach(el=>{if(el.classList.contains('scroll-reveal'))return;el.classList.remove('reveal-ready');el.classList.add('scroll-reveal');el.classList.toggle('is-visible',el.getBoundingClientRect().top<innerHeight*.94);window.siteRevealObserver.observe(el)});
 }
 
 function persist(){try{localStorage.setItem('mgd-draft-v1',JSON.stringify(data));return true}catch{return false}}
-function editor(){openDialog(`<p class="eyebrow">İÇERİK TASLAĞI</p><h2>Bilgilerinizi hazırlayın.</h2><div class="notice">Bu düzenleyici değişiklikleri önce bu tarayıcıdaki taslağa kaydeder. JSON indir ile dosyayı dışa aktarabilir ve siteye yayımlayabilirsiniz.</div><button type="button" class="button primary" data-publication-admin>Yayınlar · kapak ve PDF yönetimi ↗</button><div class="editor"><label>Bölüm</label><select id="edit-kind"><option value="president">Genel Başkan</option><option value="board">Başkanlık Divanı</option><option value="branches">İl Teşkilatları</option><option value="pioneers">Öncü Şahsiyetler</option><option value="donation">Bağış Bilgileri</option><option value="contact">İletişim</option></select><div id="edit-fields"></div><div class="actions"><button id="save-draft">Taslağı kaydet</button><button id="export-draft">JSON indir</button><button id="reset-draft">Bu tarayıcıdaki taslağı sıfırla</button></div><p class="editor-status" role="status" id="edit-status"></p></div>`);let kind='president',index=0;
+function editor(){openDialog(`<p class="eyebrow">İÇERİK TASLAĞI</p><h2>Bilgilerinizi hazırlayın.</h2><div class="notice">Bu düzenleyici değişiklikleri önce bu tarayıcıdaki taslağa kaydeder. JSON indir ile dosyayı dışa aktarabilir ve siteye yayımlayabilirsiniz.</div><button type="button" class="button primary" data-publication-admin>Yayınlar · kapak ve PDF yönetimi ↗</button><div class="editor"><label>Bölüm</label><select id="edit-kind"><option value="president">Genel Başkan</option><option value="board">Başkanlık Divanı</option><option value="branches">İl Teşkilatları</option><option value="pioneers">Öncü Şahsiyetler</option><option value="donation">Bağış Bilgileri</option><option value="contact">İletişim</option></select><div id="edit-fields"></div><div class="actions"><button id="save-draft">Taslağı kaydet</button><button id="export-draft">JSON indir</button><button id="reset-draft">Bu tarayıcıdaki taslağı sıfırla</button></div><p class="editor-status" role="status" id="edit-status"></p></div>`);
+ dialog.classList.add('admin-panel');
+ const content=document.querySelector('#dialog-content');
+ const shell=document.createElement('div');shell.className='admin-shell';
+ const aside=document.createElement('aside');aside.className='admin-sidebar';
+ aside.innerHTML='<a class="admin-brand" href="#">MG <span>Yönetim paneli</span></a><p>İÇERİK YÖNETİMİ</p><nav aria-label="Panel bölümleri"></nav><div class="admin-sidebar-note">Taslak çalışma alanı<br><small>Değişiklikler bu tarayıcıda saklanır.</small></div>';
+ const workspace=document.createElement('div');workspace.className='admin-workspace';
+ while(content.firstChild)workspace.append(content.firstChild);shell.append(aside,workspace);content.append(shell);
+ workspace.querySelector('h2').textContent='İçerik yönetimi';
+ workspace.querySelector('.eyebrow').textContent='MİLLÎ GENÇLİK DERNEĞİ';
+ const select=document.querySelector('#edit-kind');
+ Array.from(select.options).forEach(option=>{
+  const button=document.createElement('button');button.type='button';button.dataset.adminKind=option.value;button.textContent=option.textContent;
+  button.onclick=()=>{select.value=option.value;select.dispatchEvent(new Event('change'));};
+  aside.querySelector('nav').append(button);
+ });
+ const publications=document.createElement('button');publications.type='button';publications.textContent='Yayınlar ve PDF';publications.setAttribute('data-publication-admin','');aside.querySelector('nav').append(publications);
+ const top=document.createElement('div');top.className='admin-toolbar';top.innerHTML='<span><i></i> Yerel taslak</span><button type="button" id="admin-preview">Siteye dön ↗</button>';workspace.prepend(top);
+ document.querySelector('#admin-preview').onclick=()=>dialog.close();
+ function activeSection(){aside.querySelectorAll('[data-admin-kind]').forEach(button=>{const active=button.dataset.adminKind===select.value;button.classList.toggle('active',active);button.setAttribute('aria-current',active?'page':'false')})}
+ select.addEventListener('change',activeSection);activeSection();
+ let kind='president',index=0;
   function record(){return ['board','branches','pioneers'].includes(kind)?data[kind][index]:data[kind]}
  function renderPioneerPreview(r){const section=$('#pioneers'),width=section?Math.round(section.querySelector('.wrap').getBoundingClientRect().width):Math.min(1500,Math.round(innerWidth*.9)),mobile=matchMedia('(max-width:680px)').matches,closed=mobile?112:124,open=mobile?430:360,photoW=Math.round(width*(mobile ? .38 : .36));const preview=$('#pioneer-preview');if(!preview)return;const photo=imageURL(r.photo);preview.innerHTML=`<div class="pioneer-size-guide"><strong>Ölçü rehberi</strong><span>Kapalı: ${width} × ${closed} px</span><span>Açık: ${width} × ${open} px</span><span>Görsel alanı: ${photoW} × ${open} px</span></div><div class="pioneer-preview-stack"><article class="pioneer-preview-card is-closed"><span class="preview-image" ${photo?`style="background-image:url('${photo}')"`:''}></span><b>${esc(r.name||'Şahsiyet adı')}</b><small>KAPALI · ${width} × ${closed} px</small></article><article class="pioneer-preview-card is-expanded"><span class="preview-image" ${photo?`style="background-image:url('${photo}')"`:''}></span><div><b>${esc(r.name||'Şahsiyet adı')}</b><p>${esc(r.summary||'Kısa özet burada görünür.')}</p><button type="button">Tanımak için tıkla ↗</button></div><small>AÇIK · ${width} × ${open} px</small></article></div>`;}
  function field(key,label,value,type='text'){return `<label for="f-${key}">${label}</label>${type==='textarea'?`<textarea id="f-${key}" data-field="${key}">${esc(value)}</textarea>`:`<input id="f-${key}" data-field="${key}" type="${type}" value="${esc(value)}">`}`;}
