@@ -315,3 +315,18 @@ main > .scroll-reveal.is-visible,.quick-links.scroll-reveal.is-visible{opacity:1
  .admin-workspace .editor{padding:18px}
  .admin-toolbar{padding-right:0;margin-bottom:24px}
 }
+
+
+/* Slider visual ratio is locked to its loaded hero image: 1800 × 1013 px. */
+.hero-banner{height:auto;aspect-ratio:1800/1013;min-height:0}
+.hero-media img{object-fit:cover;object-position:center 42%;transform:none}
+@media(max-width:680px){
+ .hero-banner{display:flex;flex-direction:column;height:auto;min-height:0;aspect-ratio:auto}
+ .hero-media{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1800/1013;flex:0 0 auto}
+ .hero-media img,.hero-overlay{position:absolute;inset:0;width:100%;height:100%}
+ .hero-media img{object-fit:contain;object-position:center;transform:none}
+ .hero-overlay{background:linear-gradient(0deg,rgba(5,28,56,.3),transparent 48%)}
+ .hero-inner{position:relative;width:100%;height:auto;min-height:430px;display:flex;align-items:center;margin:0}
+ .hero-banner .hero-copy{width:100%;padding:24px 22px 112px}
+ .hero-banner .slide-controls{left:24px;bottom:76px}
+}
