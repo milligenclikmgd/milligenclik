@@ -30,7 +30,7 @@ document.querySelectorAll('.site-header .dropdown').forEach(d=>{
 document.addEventListener('click',e=>{if(!e.target.closest('.site-header .dropdown'))closeHeaderDropdowns()});
 
 let slides=[{title:'Şuurlu Gençlik<br><em>Güçlü Türkiye</em>',desc:'Ahlak, ilim ve sorumlulukla yarınları birlikte inşa ediyoruz.',caption:'ÖNCE AHLAK VE MANEVİYAT'},{title:'Birlikte Öğrenir,<br><em>Birlikte Üretiriz</em>',desc:'Öğreniyor, üretiyor; gençliğin emeğini geleceğe taşıyoruz.',caption:'İMAN · ŞUUR · EMEK'},{title:'Köklerden Güç,<br><em>Geleceğe Umut</em>',desc:'Köklerimizden güç alıp ilim ve kardeşlikle yürüyoruz.',caption:'AYNI İDEAL, AYNI HEYECAN'},{title:'Ahlaklı Gençlik,<br><em>Güçlü Türkiye</em>',desc:'Şuurlu ve sorumluluk sahibi gençlerle geleceğe yürüyoruz.',caption:'GELECEĞE BİRLİKTE'}];
-let slide=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches,timer;
+let slide=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches,timer;try{const saved=JSON.parse(localStorage.getItem('mgd-cms-slides')||'null');if(Array.isArray(saved)&&saved.length)slides=saved}catch{}
 function heroImage(){const s=slides[slide]||{};const src=innerWidth<700?(s.mobileImage||s.image):(s.image||s.mobileImage);if(src)$('#hero-photo').src=src}
 addEventListener('resize',heroImage);
 $('#dots').innerHTML=slides.map((_,i)=>`<button aria-label="${i+1}. slayt" data-slide="${i}"></button>`).join('');
