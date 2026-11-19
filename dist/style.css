@@ -330,3 +330,10 @@ main > .scroll-reveal.is-visible,.quick-links.scroll-reveal.is-visible{opacity:1
  .hero-banner .hero-copy{width:100%;padding:24px 22px 112px}
  .hero-banner .slide-controls{left:24px;bottom:76px}
 }
+
+/* Compact hero framing: keep quick links and pioneer section visible above the fold. */
+@media (min-width: 900px){
+  .hero-banner{height:clamp(420px,65svh,540px);min-height:420px}
+  .quick-links{margin:-44px auto 24px}
+}
+.panel-link{display:inline-flex;align-items:center;gap:6px}
