@@ -117,6 +117,12 @@ body.site-ready .hero-banner .hero-copy>*:nth-child(5){animation-delay:.40s}
 @media(max-width:680px){.hero-banner{height:690px;min-height:610px}.hero-media img{object-position:58% center}.hero-overlay{background:linear-gradient(90deg,rgba(4,43,86,.91),rgba(4,43,86,.66) 60%,rgba(4,43,86,.28)),linear-gradient(0deg,rgba(5,28,56,.4),transparent 55%)}.hero-banner .hero-copy{width:100%;padding:0 14px 18px 22px}.hero-banner .eyebrow{font-size:10px;letter-spacing:2px;gap:9px;margin-bottom:20px}.hero-banner .eyebrow span{width:34px}.hero-banner h1{font-size:clamp(42px,11vw,58px);letter-spacing:-1.6px}.hero-banner .hero-copy>p:not(.eyebrow){max-width:360px;font-size:16px}.hero-arrow{width:42px;height:42px}.hero-arrow-prev{left:12px}.hero-arrow-next{right:12px}.hero-banner .slide-controls{margin-top:42px;gap:11px}.hero-banner #dots{gap:6px}.hero-banner #dots button{width:28px}.hero-banner #dots button.active{width:35px}.quick-links{width:92%;margin-top:-56px;grid-template-columns:repeat(2,minmax(0,1fr));border-radius:15px}.quick-link{justify-content:flex-start;min-height:88px;gap:12px;padding:16px 14px}.quick-link:nth-child(2n):after{display:none}.quick-link:nth-child(5){grid-column:1/-1;justify-content:center}.quick-link svg{width:34px;height:34px}.quick-link b{font-size:13px}.quick-link small{font-size:11px}.search-dialog[open]{padding-top:7vh}.search-panel{padding:22px 18px;border-radius:16px}.search-heading h2{font-size:25px}.search-field{height:56px}.search-field kbd{display:none}.site-header .brand{gap:9px;padding-right:0;border-right:0}.site-header .brand img{width:38px;height:48px}.site-header .brand span{font-size:11px;letter-spacing:.3px}.site-header .brand small{letter-spacing:2.5px}.site-header .nav{gap:8px}.site-header .menu-toggle{padding:4px;font-size:23px}.site-header .header-actions{gap:8px}.search-toggle{width:40px;height:40px;border-radius:10px}.member-cta{width:40px;height:40px;padding:0;justify-content:center;border-radius:10px}.member-cta span{display:none}.member-cta svg{width:20px;height:20px}}
 @media(prefers-reduced-motion:reduce){.hero-banner .hero-copy>*,.quick-links,.quick-link{animation:none!important;opacity:1!important;transform:none!important}}
 
+/* Compact full-bleed slider and two-card quick access */
+@media (min-width:681px){
+ .hero-banner{height:clamp(420px,65svh,540px);min-height:420px}
+ .quick-links{grid-template-columns:repeat(2,minmax(0,1fr));width:min(1500px,90%)}
+}
+
 
 /* Slider text and counter clearance */
 .hero-banner .hero-copy{width:min(650px,60%);padding-bottom:90px}
@@ -315,25 +321,3 @@ main > .scroll-reveal.is-visible,.quick-links.scroll-reveal.is-visible{opacity:1
  .admin-workspace .editor{padding:18px}
  .admin-toolbar{padding-right:0;margin-bottom:24px}
 }
-
-
-/* Slider visual ratio is locked to its loaded hero image: 1800 × 1013 px. */
-.hero-banner{height:auto;aspect-ratio:1800/1013;min-height:0}
-.hero-media img{object-fit:cover;object-position:center 42%;transform:none}
-@media(max-width:680px){
- .hero-banner{display:flex;flex-direction:column;height:auto;min-height:0;aspect-ratio:auto}
- .hero-media{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1800/1013;flex:0 0 auto}
- .hero-media img,.hero-overlay{position:absolute;inset:0;width:100%;height:100%}
- .hero-media img{object-fit:contain;object-position:center;transform:none}
- .hero-overlay{background:linear-gradient(0deg,rgba(5,28,56,.3),transparent 48%)}
- .hero-inner{position:relative;width:100%;height:auto;min-height:430px;display:flex;align-items:center;margin:0}
- .hero-banner .hero-copy{width:100%;padding:24px 22px 112px}
- .hero-banner .slide-controls{left:24px;bottom:76px}
-}
-
-/* Compact hero framing: keep quick links and pioneer section visible above the fold. */
-@media (min-width: 900px){
-  .hero-banner{height:clamp(420px,65svh,540px);min-height:420px}
-  .quick-links{margin:-44px auto 24px}
-}
-.panel-link{display:inline-flex;align-items:center;gap:6px}
